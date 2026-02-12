@@ -1,13 +1,19 @@
-# rhp
+# Regulator Coherence ⇒ BSD (submission bundle)
 
-## GitHub configuration
+This bundle complements the LaTeX source `BSD_Reduction_Package.tex` and provides:
+- `references.bib`: BibTeX entries for core references (Bloch–Kato, Gross–Zagier, Kato, Kolyvagin, Nekovář, Skinner–Urban, MTT).
+- `PAI_padic_template.xlsx`: valuation-level PAI template (fill v_p(Reg_p) and see Δ_val).
+- `PAI_full_template.xlsx`: full PAI template for Route A (p-adic L) and Route B (anchor-normalized units).
 
-To set up your new GitHub repository, follow these steps:
+## Build
+```
+pdflatex BSD_Reduction_Package.tex
+bibtex   BSD_Reduction_Package
+pdflatex BSD_Reduction_Package.tex
+pdflatex BSD_Reduction_Package.tex
+```
 
-* Under your repository name, click **Settings**.
-* In the **Actions** section of the sidebar, click "General".
-* Check the box **Allow GitHub Actions to create and approve pull requests**.
-* Click the **Pages** section of the settings sidebar.
-* In the **Source** dropdown menu, select "GitHub Actions".
-
-After following the steps above, you can remove this section from the README file.
+## Repro
+1. Open the Excel templates and fill your measured values from Sage/LMFDB.
+2. For Route A, record dL_p(1) and Reg_p, and check their normalized ratio.
+3. For Route B, fill v_p(Reg_p) and real-mapped log_u_p (after fixing an anchor), and confirm Δ_full ≈ 0.
